@@ -24,6 +24,7 @@ class UserSignUpRequestSerializer(serializers.ModelSerializer):
             'password'
         )
 
+
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
