@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     
     'account',
     'sales',
+    'analysis',
 
     'rest_framework',
     'drf_spectacular',
