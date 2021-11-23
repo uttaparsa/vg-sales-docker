@@ -11,10 +11,3 @@ class PlatformSerializer(serializers.Serializer):
 
 class YearSerializer(serializers.Serializer):
     year = serializers.IntegerField(min_value=1, max_value=2100)
-
-class YearRangeSerializer(serializers.Serializer):
-    start_year = serializers.IntegerField(min_value=1970, max_value=2100)
-    end_year = serializers.IntegerField(min_value=1971, max_value=2100)
-
-class CountSerializer(serializers.Serializer):
-    count = serializers.IntegerField(min_value=1, max_value=16500)
