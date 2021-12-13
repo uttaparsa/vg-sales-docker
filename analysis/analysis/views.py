@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import io
 
 from drf_spectacular.utils import extend_schema
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 
 from analysis import serializers
@@ -16,10 +17,12 @@ df = pd.read_csv('vgsales.csv')
 df = df.dropna()
 df[['Year']] = df[['Year']].astype(int)
 
+
 @extend_schema(parameters=[serializers.YearRangeSerializer, serializers.TwoPublisherSerialzier])
 class PublishersSalesComparisonByYearsPeriod(APIView):
-    def get(self, request, *args, **kwargs):
+    permission_classes = [IsAuthenticated]
 
+    def get(self, request, *args, **kwargs):
         serializers.YearRangeSerializer(
             data=request.GET
         ).is_valid(raise_exception=True)
@@ -42,17 +45,19 @@ class PublishersSalesComparisonByYearsPeriod(APIView):
     def create_figure(self, start_year, end_year, publisher1, publisher2):
         plt.clf()
         publisher1_data = \
-        df[df['Publisher'].str.contains("Ubisoft") & (df['Year'] >= start_year) & (df['Year'] <= end_year)].groupby(['Year'])[
-            'Global_Sales'].agg('sum').to_dict()
+            df[df['Publisher'].str.contains("Ubisoft") & (df['Year'] >= start_year) & (df['Year'] <= end_year)].groupby(
+                ['Year'])[
+                'Global_Sales'].agg('sum').to_dict()
         publisher2_data = \
-        df[df['Publisher'].str.contains("Nintendo") & (df['Year'] >= start_year) & (df['Year'] <= end_year)].groupby(['Year'])[
-            'Global_Sales'].agg('sum').to_dict()
+            df[df['Publisher'].str.contains("Nintendo") & (df['Year'] >= start_year) & (
+                    df['Year'] <= end_year)].groupby(['Year'])[
+                'Global_Sales'].agg('sum').to_dict()
 
         # Create a dataframe using the two lists
         df_publisher_sales = pd.DataFrame(
             {'Years': publisher1_data.keys(),
              publisher1: publisher1_data.values(),
-             publisher2 : publisher2_data.values()})
+             publisher2: publisher2_data.values()})
 
         ax = plt.gca()
 
@@ -62,8 +67,11 @@ class PublishersSalesComparisonByYearsPeriod(APIView):
 
         return ax.get_figure()
 
+
 @extend_schema(parameters=[serializers.YearRangeSerializer])
 class TotalSalesByYearsPeriod(APIView):
+    permission_classes = [IsAuthenticated]
+
     def get(self, request, *args, **kwargs):
         start_year = int(request.GET['start_year'])
         end_year = int(request.GET['end_year'])
@@ -93,8 +101,11 @@ class TotalSalesByYearsPeriod(APIView):
         plt.title("Total sells in each year")
         return fig
 
+
 @extend_schema(parameters=[serializers.SalesComparisonByGameSerializer])
 class SalesComparisonByGame(APIView):
+    permission_classes = [IsAuthenticated]
+
     def get(self, request, *args, **kwargs):
         game1 = request.GET['game1']
         game2 = request.GET['game2']
@@ -145,8 +156,11 @@ class SalesComparisonByGame(APIView):
         plt.legend()
         return fig
 
+
 @extend_schema(parameters=[serializers.YearRangeSerializer])
 class CategorySalesByYear(APIView):
+    permission_classes = [IsAuthenticated]
+
     def get(self, request, *args, **kwargs):
         start_year = int(request.GET['start_year'])
         end_year = int(request.GET['end_year'])
@@ -160,7 +174,8 @@ class CategorySalesByYear(APIView):
         return HttpResponse(output.getvalue(), content_type="image/png")
 
     def create_figure(self, start_year, end_year):
-        data = df.loc[(df['Year'] >= start_year) & (df['Year'] <= end_year)].groupby(['Genre'])['Global_Sales'].agg('sum').to_dict()
+        data = df.loc[(df['Year'] >= start_year) & (df['Year'] <= end_year)].groupby(['Genre'])['Global_Sales'].agg(
+            'sum').to_dict()
         categories = list(data.keys())
         sales = list(data.values())
 

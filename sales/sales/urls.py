@@ -1,6 +1,6 @@
 from django.urls import path
 
-from sales.views import RankView, NameView, FiveBestSellersBasedOnYearAndPlatform, AmericanSellsMoreThanBritish
+from .views import RankView, NameView, FiveBestSellersBasedOnYearAndPlatform, AmericanSellsMoreThanBritish
 
 urlpatterns = [
     path('rank/<int:rank>/', RankView.as_view()),

@@ -1,13 +1,41 @@
 version: '3.8'
 
 services:
-  web:
-    build: ./app
+  identity:
+    build: ./identity
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - ./app/:/usr/src/app/
+      - ./identity/:/usr/src/app/
+    networks:
+      - vg-sales_0
     ports:
       - 8000:8000
+    env_file:
+      - ./.env.dev
+    depends_on:
+      - db
+  sales:
+    build: ./sales
+    command: python manage.py runserver 0.0.0.0:8001
+    volumes:
+      - ./sales/:/usr/src/app/
+    networks:
+      - vg-sales_0
+    ports:
+      - 8001:8001
+    env_file:
+      - ./.env.dev
+    depends_on:
+      - db
+  analysis:
+    build: ./analysis
+    command: python manage.py runserver 0.0.0.0:8002
+    volumes:
+      - ./analysis/:/usr/src/app/
+    networks:
+      - vg-sales_0
+    ports:
+      - 8002:8002
     env_file:
       - ./.env.dev
     depends_on:
@@ -20,8 +48,12 @@ services:
       - POSTGRES_USER=vs_sales
       - POSTGRES_PASSWORD=vs_sales
       - POSTGRES_DB=vs_sales_dev
+    networks:
+      - vg-sales_0
     ports:
       - "5433:5432"
 
+networks:
+  vg-sales_0:
 volumes:
   postgres_data:

@@ -9,6 +9,7 @@ import io
 
 from drf_spectacular.utils import extend_schema
 from rest_framework import status
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -20,12 +21,14 @@ df[['Year']] = df[['Year']].astype(int)
 
 
 class RankView(APIView):
+    permission_classes = [IsAuthenticated]
 
     def get(self, request, rank, *args, **kwargs):
         return Response(df.loc[df['Rank'] == rank].to_dict(orient='records')[0], status=status.HTTP_200_OK)
 
 
 class NameView(APIView):
+    permission_classes = [IsAuthenticated]
 
     @extend_schema(parameters=[serializers.NameSerializer])
     def get(self, request, *args, **kwargs):
@@ -39,6 +42,7 @@ class NameView(APIView):
 
 
 class FiveBestSellersBasedOnYearAndPlatform(APIView):
+    permission_classes = [IsAuthenticated]
 
     @extend_schema(parameters=[serializers.YearSerializer, serializers.PlatformSerializer])
     def get(self, request, *args, **kwargs):
@@ -57,6 +61,8 @@ class FiveBestSellersBasedOnYearAndPlatform(APIView):
 
 
 class AmericanSellsMoreThanBritish(APIView):
+    permission_classes = [IsAuthenticated]
+
     def get(self, request, *args, **kwargs):
         return Response(
             df.loc[df['NA_Sales'] < df['EU_Sales']][['Rank']].to_dict(orient='records'),
