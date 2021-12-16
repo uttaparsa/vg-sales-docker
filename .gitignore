@@ -1,8 +1,10 @@
 .venv
 .idea/
 .vscode/
-.env*
+.env
 __pycache__/
 *.pyc
 **/__pycache__/
 .ipynb_checkpoints/
+db.sqlite3
+.env**
