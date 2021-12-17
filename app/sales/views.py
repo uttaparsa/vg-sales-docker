@@ -70,6 +70,8 @@ class AmericanSellsMoreThanBritish(APIView):
 
 
 class TopNRanksByPlatform(APIView):
+    permission_classes = [IsAuthenticated]
+
     @extend_schema(parameters=[serializers.NSerializer, serializers.PlatformSerializer])
     def get(self, request, *args, **kwargs):
         serializers.NSerializer(
@@ -88,6 +90,8 @@ class TopNRanksByPlatform(APIView):
 
 
 class TopNRanksByYear(APIView):
+    permission_classes = [IsAuthenticated]
+
     @extend_schema(parameters=[serializers.NSerializer, serializers.YearSerializer])
     def get(self, request, *args, **kwargs):
         serializers.NSerializer(
@@ -106,6 +110,8 @@ class TopNRanksByYear(APIView):
 
 
 class TopNRanksByGenre(APIView):
+    permission_classes = [IsAuthenticated]
+
     @extend_schema(parameters=[serializers.NSerializer, serializers.GenreSerializer])
     def get(self, request, *args, **kwargs):
         serializers.NSerializer(

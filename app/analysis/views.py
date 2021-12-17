@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import io
 
 from drf_spectacular.utils import extend_schema
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 
 from analysis import serializers
@@ -18,6 +19,8 @@ df[['Year']] = df[['Year']].astype(int)
 
 @extend_schema(parameters=[serializers.YearRangeSerializer, serializers.TwoPublisherSerialzier])
 class PublishersSalesComparisonByYearsPeriod(APIView):
+    permission_classes = [IsAuthenticated]
+
     def get(self, request, *args, **kwargs):
 
         serializers.YearRangeSerializer(
@@ -64,6 +67,8 @@ class PublishersSalesComparisonByYearsPeriod(APIView):
 
 @extend_schema(parameters=[serializers.YearRangeSerializer])
 class TotalSalesByYearsPeriod(APIView):
+    permission_classes = [IsAuthenticated]
+
     def get(self, request, *args, **kwargs):
         start_year = int(request.GET['start_year'])
         end_year = int(request.GET['end_year'])
@@ -95,6 +100,8 @@ class TotalSalesByYearsPeriod(APIView):
 
 @extend_schema(parameters=[serializers.SalesComparisonByGameSerializer])
 class SalesComparisonByGame(APIView):
+    permission_classes = [IsAuthenticated]
+
     def get(self, request, *args, **kwargs):
         game1 = request.GET['game1']
         game2 = request.GET['game2']
@@ -147,6 +154,8 @@ class SalesComparisonByGame(APIView):
 
 @extend_schema(parameters=[serializers.YearRangeSerializer])
 class CategorySalesByYear(APIView):
+    permission_classes = [IsAuthenticated]
+
     def get(self, request, *args, **kwargs):
         start_year = int(request.GET['start_year'])
         end_year = int(request.GET['end_year'])
