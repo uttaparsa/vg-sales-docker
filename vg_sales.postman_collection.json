@@ -1,0 +1,1090 @@
+{
+	"info": {
+		"_postman_id": "e7b46100-1952-46c7-abc2-c2d5afe28a35",
+		"name": "vg_sales",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:5000/addUserJack",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"Jack\",\n  \"first_name\": \"Jack\",\n  \"last_name\": \"Jack\",\n  \"email\": \"Jack@example.com\",\n  \"password\": \"Jack\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8003/api/account/signup/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8003",
+					"path": [
+						"api",
+						"account",
+						"signup",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/addUserRafael",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"Rafael\",\n  \"first_name\": \"Rafael\",\n  \"last_name\": \"Rafael\",\n  \"email\": \"Rafael@example.com\",\n  \"password\": \"Rafael\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8003/api/account/signup/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8003",
+					"path": [
+						"api",
+						"account",
+						"signup",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/addExistingUserKimia",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"Kimia\",\n  \"first_name\": \"Kimia\",\n  \"last_name\": \"Kimia\",\n  \"email\": \"Kimia@example.com\",\n  \"password\": \"Kimia\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8003/api/account/signup/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8003",
+					"path": [
+						"api",
+						"account",
+						"signup",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/getTokenKimia",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"kimia\",\n  \"password\": \"kimia\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8003/api/token/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8003",
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8002/api/sales/american-sells-more-than-european/",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM5NzYxMDQyLCJpYXQiOjE2Mzk3NjA3NDIsImp0aSI6ImVkY2E4NmNhYTQxZjQ0ZmRiNWIwNjk3ODEzNzc0ZDQzIiwidXNlcl9pZCI6MzV9.AXkWTTf3XZRePtVUUDiZQB4aXBeMloLLVZPSDhUl1Wg",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8002/api/sales/american-sells-more-than-european/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"sales",
+						"american-sells-more-than-european",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8002/api/sales/name/?name=Mario",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM5NzYxNDMxLCJpYXQiOjE2Mzk3NjExMzEsImp0aSI6IjJiOWRhN2IyZDcwOTQ0NDU5MDFjZGM0ODY0NGM3M2Y1IiwidXNlcl9pZCI6MzV9.p-rwYYBLKXq2jhVngCPsFKo3stcrZQ6_fBq1ajFy6A8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8002/api/sales/name/?name=Mario",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"sales",
+						"name",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Mario"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8002/api/sales/five-best-sellers/?platform=Wii&year=2006",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM5NzYxNDMxLCJpYXQiOjE2Mzk3NjExMzEsImp0aSI6IjJiOWRhN2IyZDcwOTQ0NDU5MDFjZGM0ODY0NGM3M2Y1IiwidXNlcl9pZCI6MzV9.p-rwYYBLKXq2jhVngCPsFKo3stcrZQ6_fBq1ajFy6A8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8002/api/sales/five-best-sellers/?platform=Wii&year=2006",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"sales",
+						"five-best-sellers",
+						""
+					],
+					"query": [
+						{
+							"key": "platform",
+							"value": "Wii"
+						},
+						{
+							"key": "year",
+							"value": "2006"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8002/api/sales/name/?name=Call%20of%20Duty",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM5NzYxNDMxLCJpYXQiOjE2Mzk3NjExMzEsImp0aSI6IjJiOWRhN2IyZDcwOTQ0NDU5MDFjZGM0ODY0NGM3M2Y1IiwidXNlcl9pZCI6MzV9.p-rwYYBLKXq2jhVngCPsFKo3stcrZQ6_fBq1ajFy6A8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8002/api/sales/name/?name=Call%20of%20Duty",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"sales",
+						"name",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Call%20of%20Duty"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8002/api/sales/five-best-sellers/?platform=PS4&year=2015",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM5NzYzOTg3LCJpYXQiOjE2Mzk3NjM2ODcsImp0aSI6IjNlZDdiZTMxMjMzNTQyM2VhMDZiMWI1OTg1NjcxNjYwIiwidXNlcl9pZCI6MzV9.wCQnhFUYlFdrdabA4CjW7wS5IdL5RuzIUZ653WB3OFU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8002/api/sales/five-best-sellers/?platform=PS4&year=2015",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"sales",
+						"five-best-sellers",
+						""
+					],
+					"query": [
+						{
+							"key": "platform",
+							"value": "PS4"
+						},
+						{
+							"key": "year",
+							"value": "2015"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8002/api/sales/rank/5/",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM5NzYzOTg3LCJpYXQiOjE2Mzk3NjM2ODcsImp0aSI6IjNlZDdiZTMxMjMzNTQyM2VhMDZiMWI1OTg1NjcxNjYwIiwidXNlcl9pZCI6MzV9.wCQnhFUYlFdrdabA4CjW7wS5IdL5RuzIUZ653WB3OFU",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8002/api/sales/rank/5/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"sales",
+						"rank",
+						"5",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8002/api/sales/rank/14/",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM5NzYzOTg3LCJpYXQiOjE2Mzk3NjM2ODcsImp0aSI6IjNlZDdiZTMxMjMzNTQyM2VhMDZiMWI1OTg1NjcxNjYwIiwidXNlcl9pZCI6MzV9.wCQnhFUYlFdrdabA4CjW7wS5IdL5RuzIUZ653WB3OFU",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8002/api/sales/rank/14/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"sales",
+						"rank",
+						"14",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8002/api/sales/top-n-ranks-by-genre/?N=5&genre=Action",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM5NzY0MjUzLCJpYXQiOjE2Mzk3NjM5NTMsImp0aSI6IjgzYTI1YjA5NGNiZTRjMjJhNTNmYzNkMDQ1MmU3YWQ5IiwidXNlcl9pZCI6MzV9.LQODZQ08z2rwosVgB4kpdoWXfck0y-5c6-trgnnld1M",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8002/api/sales/top-n-ranks-by-genre/?N=5&genre=Action",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"sales",
+						"top-n-ranks-by-genre",
+						""
+					],
+					"query": [
+						{
+							"key": "N",
+							"value": "5"
+						},
+						{
+							"key": "genre",
+							"value": "Action"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8002/api/sales/top-n-ranks-by-genre/?N=12&genre=Sports",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM5NzY0MjUzLCJpYXQiOjE2Mzk3NjM5NTMsImp0aSI6IjgzYTI1YjA5NGNiZTRjMjJhNTNmYzNkMDQ1MmU3YWQ5IiwidXNlcl9pZCI6MzV9.LQODZQ08z2rwosVgB4kpdoWXfck0y-5c6-trgnnld1M",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8002/api/sales/top-n-ranks-by-genre/?N=12&genre=Sports",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"sales",
+						"top-n-ranks-by-genre",
+						""
+					],
+					"query": [
+						{
+							"key": "N",
+							"value": "12"
+						},
+						{
+							"key": "genre",
+							"value": "Sports"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8002/api/sales/top-n-ranks-by-platform/?N=5&platform=PS2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM5NzY0NDE1LCJpYXQiOjE2Mzk3NjQxMTUsImp0aSI6ImFmODQ3YTUxOTRlMTRmNWE5YzVjZjhmNzRkZmI3YjExIiwidXNlcl9pZCI6MzV9._ag-hPb4RNjZslVXGqk4MmP-xspoGPzRfd-51osw40g",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8002/api/sales/top-n-ranks-by-platform/?N=5&platform=PS2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"sales",
+						"top-n-ranks-by-platform",
+						""
+					],
+					"query": [
+						{
+							"key": "N",
+							"value": "5"
+						},
+						{
+							"key": "platform",
+							"value": "PS2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8002/api/sales/top-n-ranks-by-platform/?N=7&platform=X360",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM5NzY0NDE1LCJpYXQiOjE2Mzk3NjQxMTUsImp0aSI6ImFmODQ3YTUxOTRlMTRmNWE5YzVjZjhmNzRkZmI3YjExIiwidXNlcl9pZCI6MzV9._ag-hPb4RNjZslVXGqk4MmP-xspoGPzRfd-51osw40g",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8002/api/sales/top-n-ranks-by-platform/?N=7&platform=X360",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"sales",
+						"top-n-ranks-by-platform",
+						""
+					],
+					"query": [
+						{
+							"key": "N",
+							"value": "7"
+						},
+						{
+							"key": "platform",
+							"value": "X360"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8002/api/sales/top-n-ranks-by-year/?N=21&year=2011",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM5NzY0NzI2LCJpYXQiOjE2Mzk3NjQ0MjYsImp0aSI6IjBmODFhYmVmOTE2ZjQwNzU4NTBjY2FhMzBkYzJiMjI2IiwidXNlcl9pZCI6MzV9.JTFOgE4_9oJRRV3wQmlZMB2c9LcJbk13oH7AkFhLOic",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8002/api/sales/top-n-ranks-by-year/?N=21&year=2011",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"sales",
+						"top-n-ranks-by-year",
+						""
+					],
+					"query": [
+						{
+							"key": "N",
+							"value": "21"
+						},
+						{
+							"key": "year",
+							"value": "2011"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8002/api/sales/top-n-ranks-by-year/?N=45&year=1999",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM5NzY0NzI2LCJpYXQiOjE2Mzk3NjQ0MjYsImp0aSI6IjBmODFhYmVmOTE2ZjQwNzU4NTBjY2FhMzBkYzJiMjI2IiwidXNlcl9pZCI6MzV9.JTFOgE4_9oJRRV3wQmlZMB2c9LcJbk13oH7AkFhLOic",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8002/api/sales/top-n-ranks-by-year/?N=45&year=1999",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"sales",
+						"top-n-ranks-by-year",
+						""
+					],
+					"query": [
+						{
+							"key": "N",
+							"value": "45"
+						},
+						{
+							"key": "year",
+							"value": "1999"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8001/api/analysis/category-sales-by-year-period/?end_year=1998&start_year=2007",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM5NzY0ODgwLCJpYXQiOjE2Mzk3NjQ1ODAsImp0aSI6Ijk0ZDZjMjMxNjRiZjRmNGM5YTlkNzM2YTRmMDhjMWY1IiwidXNlcl9pZCI6MzV9.djnf17HO7QLI7lkqRAQhtZJX-H8CjXNIL_r9aQcBSHA",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8001/api/analysis/category-sales-by-year-period/?end_year=2007&start_year=1998",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"analysis",
+						"category-sales-by-year-period",
+						""
+					],
+					"query": [
+						{
+							"key": "end_year",
+							"value": "2007"
+						},
+						{
+							"key": "start_year",
+							"value": "1998"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8001/api/analysis/category-sales-by-year-period/?end_year=2015&start_year=2001",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM5NzY0ODgwLCJpYXQiOjE2Mzk3NjQ1ODAsImp0aSI6Ijk0ZDZjMjMxNjRiZjRmNGM5YTlkNzM2YTRmMDhjMWY1IiwidXNlcl9pZCI6MzV9.djnf17HO7QLI7lkqRAQhtZJX-H8CjXNIL_r9aQcBSHA",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8001/api/analysis/category-sales-by-year-period/?end_year=2015&start_year=2001",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"analysis",
+						"category-sales-by-year-period",
+						""
+					],
+					"query": [
+						{
+							"key": "end_year",
+							"value": "2015"
+						},
+						{
+							"key": "start_year",
+							"value": "2001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8001/api/analysis/publishers-sales-comparison-by-years-period/?end_year=2001&publisher1=Nintendo&publisher2=Sony%20Computer%20Entertainment&start_year=1997",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM5NzY0ODgwLCJpYXQiOjE2Mzk3NjQ1ODAsImp0aSI6Ijk0ZDZjMjMxNjRiZjRmNGM5YTlkNzM2YTRmMDhjMWY1IiwidXNlcl9pZCI6MzV9.djnf17HO7QLI7lkqRAQhtZJX-H8CjXNIL_r9aQcBSHA",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8001/api/analysis/publishers-sales-comparison-by-years-period/?end_year=2001&publisher1=Nintendo&publisher2=Sony%20Computer%20Entertainment&start_year=1997",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"analysis",
+						"publishers-sales-comparison-by-years-period",
+						""
+					],
+					"query": [
+						{
+							"key": "end_year",
+							"value": "2001"
+						},
+						{
+							"key": "publisher1",
+							"value": "Nintendo"
+						},
+						{
+							"key": "publisher2",
+							"value": "Sony%20Computer%20Entertainment"
+						},
+						{
+							"key": "start_year",
+							"value": "1997"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8001/api/analysis/publishers-sales-comparison-by-years-period/?end_year=2011&publisher1=Microsoft%20Game%20Studios&publisher2=Activision&start_year=2002",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM5NzY1MjA2LCJpYXQiOjE2Mzk3NjQ5MDYsImp0aSI6ImJiNWU5NzE2ZTc1NTQyOTk5OTU4NzU4M2Y3NzU0YTk1IiwidXNlcl9pZCI6MzV9.zDmgE40XXd8kwBsmROB5RZJ3trgbaB1L8oDzFYmTDiM",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8001/api/analysis/publishers-sales-comparison-by-years-period/?end_year=2011&publisher1=Microsoft%20Game%20Studios&publisher2=Activision&start_year=2002",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"analysis",
+						"publishers-sales-comparison-by-years-period",
+						""
+					],
+					"query": [
+						{
+							"key": "end_year",
+							"value": "2011"
+						},
+						{
+							"key": "publisher1",
+							"value": "Microsoft%20Game%20Studios"
+						},
+						{
+							"key": "publisher2",
+							"value": "Activision"
+						},
+						{
+							"key": "start_year",
+							"value": "2002"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8001/api/analysis/sales-by-year-period/?end_year=2015&start_year=2003",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM5NzY1MjA2LCJpYXQiOjE2Mzk3NjQ5MDYsImp0aSI6ImJiNWU5NzE2ZTc1NTQyOTk5OTU4NzU4M2Y3NzU0YTk1IiwidXNlcl9pZCI6MzV9.zDmgE40XXd8kwBsmROB5RZJ3trgbaB1L8oDzFYmTDiM",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8001/api/analysis/sales-by-year-period/?end_year=2015&start_year=2003",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"analysis",
+						"sales-by-year-period",
+						""
+					],
+					"query": [
+						{
+							"key": "end_year",
+							"value": "2015"
+						},
+						{
+							"key": "start_year",
+							"value": "2003"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8001/api/analysis/sales-by-year-period/?end_year=2015&start_year=2003",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM5NzY1MjA2LCJpYXQiOjE2Mzk3NjQ5MDYsImp0aSI6ImJiNWU5NzE2ZTc1NTQyOTk5OTU4NzU4M2Y3NzU0YTk1IiwidXNlcl9pZCI6MzV9.zDmgE40XXd8kwBsmROB5RZJ3trgbaB1L8oDzFYmTDiM",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8001/api/analysis/sales-by-year-period/?end_year=2013&start_year=1999",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"analysis",
+						"sales-by-year-period",
+						""
+					],
+					"query": [
+						{
+							"key": "end_year",
+							"value": "2013"
+						},
+						{
+							"key": "start_year",
+							"value": "1999"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8001/api/analysis/sales-comparison-by-game/?game1=Super%20Mario%2064&game2=Call%20of%20Duty%3A%20Black%20Ops%20II",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM5NzY1MjA2LCJpYXQiOjE2Mzk3NjQ5MDYsImp0aSI6ImJiNWU5NzE2ZTc1NTQyOTk5OTU4NzU4M2Y3NzU0YTk1IiwidXNlcl9pZCI6MzV9.zDmgE40XXd8kwBsmROB5RZJ3trgbaB1L8oDzFYmTDiM",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8001/api/analysis/sales-comparison-by-game/?game1=Super%20Mario%2064&game2=Call%20of%20Duty%3A%20Black%20Ops%20II",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"analysis",
+						"sales-comparison-by-game",
+						""
+					],
+					"query": [
+						{
+							"key": "game1",
+							"value": "Super%20Mario%2064"
+						},
+						{
+							"key": "game2",
+							"value": "Call%20of%20Duty%3A%20Black%20Ops%20II"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8001/api/analysis/sales-comparison-by-game/?game1=Red%20Dead%20Redemption&game2=Grand%20Theft%20Auto%20IV",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM5NzY1MjA2LCJpYXQiOjE2Mzk3NjQ5MDYsImp0aSI6ImJiNWU5NzE2ZTc1NTQyOTk5OTU4NzU4M2Y3NzU0YTk1IiwidXNlcl9pZCI6MzV9.zDmgE40XXd8kwBsmROB5RZJ3trgbaB1L8oDzFYmTDiM",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8001/api/analysis/sales-comparison-by-game/?game1=Red%20Dead%20Redemption&game2=Grand%20Theft%20Auto%20IV",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"analysis",
+						"sales-comparison-by-game",
+						""
+					],
+					"query": [
+						{
+							"key": "game1",
+							"value": "Red%20Dead%20Redemption"
+						},
+						{
+							"key": "game2",
+							"value": "Grand%20Theft%20Auto%20IV"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
