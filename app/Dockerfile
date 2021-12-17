@@ -14,6 +14,12 @@ RUN apt-get update && apt-get install -y apt-transport-https
 RUN apt-get update \
     && apt-get -y install libpq-dev gcc \
     && pip install psycopg2
+# install sqlite
+# RUN sudo apt-get -y update
+# RUN sudo apt-get -y upgrade
+# RUN sudo apt-get install -y sqlite3 libsqlite3-dev
+# RUN mkdir /db
+# RUN /usr/bin/sqlite3 /db/test.db
 
 # install dependencies
 RUN pip install --upgrade pip
