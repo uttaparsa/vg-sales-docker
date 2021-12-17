@@ -9,6 +9,10 @@ class PlatformSerializer(serializers.Serializer):
     platform = serializers.CharField(max_length=256)
 
 
+class GenreSerializer(serializers.Serializer):
+    genre = serializers.CharField(max_length=256)
+
+
 class YearSerializer(serializers.Serializer):
     year = serializers.IntegerField(min_value=1, max_value=2100)
 

@@ -103,3 +103,21 @@ class TopNRanksByYear(APIView):
                 .sort_values(by=['Rank'], ascending=True)[:int(request.GET['N'])]
                 .to_dict(orient='records'),
             status=status.HTTP_200_OK)
+
+
+class TopNRanksByGenre(APIView):
+    @extend_schema(parameters=[serializers.NSerializer, serializers.GenreSerializer])
+    def get(self, request, *args, **kwargs):
+        serializers.NSerializer(
+            data=request.GET
+        ).is_valid(raise_exception=True)
+
+        serializers.GenreSerializer(
+            data=request.GET
+        ).is_valid(raise_exception=True)
+
+        return Response(
+            df.loc[df['Genre'] == request.GET['genre']]
+                .sort_values(by=['Rank'], ascending=True)[:int(request.GET['N'])]
+                .to_dict(orient='records'),
+            status=status.HTTP_200_OK)

@@ -1,7 +1,7 @@
 from django.urls import path
 
 from .views import RankView, NameView, FiveBestSellersBasedOnYearAndPlatform, AmericanSellsMoreThanBritish, \
-    TopNRanksByPlatform, TopNRanksByYear
+    TopNRanksByPlatform, TopNRanksByYear, TopNRanksByGenre
 
 urlpatterns = [
     path('rank/<int:rank>/', RankView.as_view()),
@@ -10,5 +10,6 @@ urlpatterns = [
     path('american-sells-more-than-european/', AmericanSellsMoreThanBritish.as_view()),
     path('top-n-ranks-by-platform/', TopNRanksByPlatform.as_view()),
     path('top-n-ranks-by-year/', TopNRanksByYear.as_view()),
+    path('top-n-ranks-by-genre/', TopNRanksByGenre.as_view()),
 ]
 
