@@ -11,3 +11,7 @@ class PlatformSerializer(serializers.Serializer):
 
 class YearSerializer(serializers.Serializer):
     year = serializers.IntegerField(min_value=1, max_value=2100)
+
+
+class NSerializer(serializers.Serializer):
+    N = serializers.IntegerField(min_value=1, max_value=50)

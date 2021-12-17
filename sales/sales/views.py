@@ -67,3 +67,39 @@ class AmericanSellsMoreThanBritish(APIView):
         return Response(
             df.loc[df['NA_Sales'] < df['EU_Sales']][['Rank']].to_dict(orient='records'),
             status=status.HTTP_200_OK)
+
+
+class TopNRanksByPlatform(APIView):
+    @extend_schema(parameters=[serializers.NSerializer, serializers.PlatformSerializer])
+    def get(self, request, *args, **kwargs):
+        serializers.NSerializer(
+            data=request.GET
+        ).is_valid(raise_exception=True)
+
+        serializers.PlatformSerializer(
+            data=request.GET
+        ).is_valid(raise_exception=True)
+
+        return Response(
+            df.loc[df['Platform'] == request.GET['platform']]
+                .sort_values(by=['Rank'], ascending=True)[:int(request.GET['N'])]
+                .to_dict(orient='records'),
+            status=status.HTTP_200_OK)
+
+
+class TopNRanksByYear(APIView):
+    @extend_schema(parameters=[serializers.NSerializer, serializers.YearSerializer])
+    def get(self, request, *args, **kwargs):
+        serializers.NSerializer(
+            data=request.GET
+        ).is_valid(raise_exception=True)
+
+        serializers.YearSerializer(
+            data=request.GET
+        ).is_valid(raise_exception=True)
+
+        return Response(
+            df.loc[df['Year'] == int(request.GET['year'])]
+                .sort_values(by=['Rank'], ascending=True)[:int(request.GET['N'])]
+                .to_dict(orient='records'),
+            status=status.HTTP_200_OK)
