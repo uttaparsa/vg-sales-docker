@@ -31,8 +31,8 @@ from account.views import CustomTokenObtainPairView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/account/', include('account.urls')),
-    path('api/sales/', include('sales.urls')),
-    path('api/analysis/', include('analysis.urls')),
+    # path('api/sales/', include('sales.urls')),
+    # path('api/analysis/', include('analysis.urls')),
     path('api/token/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),

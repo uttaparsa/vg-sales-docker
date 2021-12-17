@@ -1,15 +1,31 @@
 version: '3.8'
 
 services:
-  web:
+  account:
     build: ./app
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python manage_account.py runserver 0.0.0.0:8000
     volumes:
       - ./app/:/usr/src/app/
     ports:
       - 8000:8000
-    env_file:
-      - ./.env.dev
+    depends_on:
+      - db
+  analisys:
+    build: ./app
+    command: python manage_analysis.py runserver 0.0.0.0:8001
+    volumes:
+      - ./app/:/usr/src/app/
+    ports:
+      - 8001:8001
+    depends_on:
+      - db
+  sales:
+    build: ./app
+    command: python manage_sales.py runserver 0.0.0.0:8002
+    volumes:
+      - ./app/:/usr/src/app/
+    ports:
+      - 8002:8002
     depends_on:
       - db
   db:
@@ -21,7 +37,44 @@ services:
       - POSTGRES_PASSWORD=vs_sales
       - POSTGRES_DB=vs_sales_dev
     ports:
-      - "5433:5432"
+      - "54333:5432"
 
 volumes:
   postgres_data:
+
+
+# version: '3.8'
+
+# services:
+#   db:
+#     image: postgres:13.0-alpine
+#     volumes:
+#       - postgres_data:/var/lib/postgresql/data/
+#     environment:
+#       - POSTGRES_USER=vs_sales
+#       - POSTGRES_PASSWORD=vs_sales
+#       - POSTGRES_DB=vs_sales_dev
+#     ports:
+#       - "5433:5432"
+  
+#   Analisys:
+#     build: ./app
+#     command: python manage.py runserver 0.0.0.0:8000
+#     volumes:
+#       - ./app/:/usr/src/app/
+#     ports:
+#       - 8001:8000
+#     depends_on:
+#       - db
+  
+#   web:
+#     build: ./app
+#     command: python manage.py runserver 0.0.0.0:8000
+#     volumes:
+#       - ./app/:/usr/src/app/
+#     ports:
+#       - 8000:8000
+#     env_file:
+#       - ./.env.dev
+#     depends_on:
+#       - db
